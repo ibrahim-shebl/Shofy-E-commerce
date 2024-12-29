@@ -1,0 +1,23 @@
+.about__section {
+  background: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562)), url("../../../assets/about/feature.jpg") no-repeat center center;
+    background-size: cover;
+    padding: 220px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     
+}
+.about__section h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .about__section {
+    padding: 60px 0px;
+  }
+  .about__section h2 {
+     font-size: 22px;
+  }
+}

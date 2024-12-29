@@ -1,0 +1,165 @@
+.about {
+    padding:  0px 80px;
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width:477px) {
+    .about{
+        padding: 20px;
+        flex-direction: column;
+    }
+}
+.about img {
+    width: 50%;
+    height: auto;
+}
+@media (max-width:477px) {
+    .about img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.about div {
+    padding-left: 40px;
+    width: 50%;
+}
+@media (max-width:477px) {
+    .about div {
+        padding-left: 0px;
+        width: 100%;
+    }
+}
+.about h2 {
+    font-size: 35px;
+    line-height: 54px; 
+}
+@media (max-width:477px) {
+    .about h2 {
+        font-size: 30px;
+    }
+}
+.about p {
+    font-size: 16px;
+    color: rgb(82 82 91);
+    margin: 15px 0 20px 0;
+}
+/* start feature */
+.features .Feature_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.features .box {
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.features .box .img-holder {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.features .box .img-holder::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.features .box .img-holder::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0px 0px 100px 500px;
+    border-color: transparent transparent  #fff transparent ;
+    transition: 0.3s;
+}
+.features .box .img-holder img {
+    max-width: 100%;
+    width: 100%;
+}
+.features .box:hover .img-holder::after {
+    border-width: 170px 500px 170px 0px;
+}
+.features .box h2 {
+    position: relative;
+    font-size: 35px;
+    width: fit-content;
+    margin: auto;
+    color: #000;
+}
+.features .box h2::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
+    height: 5px;
+    width: calc(100% - 30px);
+}
+.features .box p{
+    line-height: 2;
+    font-size: 20px;
+    padding: 25px;
+    margin: 30px 0;
+    color: #777;
+
+}
+.features .box a {
+    display: block;
+    border: 3px solid transparent;
+    width: fit-content;
+    margin: 0 auto 30px;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px 30px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.features .quality .img-holder::before {
+    background-color: rgb( 224 64 54 / 60%)
+}
+.features .quality h2::after {
+    background-color: #f44036;
+}
+.features .quality a{
+    color: #f44036;
+    border-color: #f44036;
+    background: linear-gradient(to right, #f44036 50% , white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+.features .box:hover a {
+    background-position: left bottom;
+    color: white;
+}
+.features .challenge .img-holder::before {
+    background-color: rgb( 0 150 136 / 60%)
+}
+.features .challenge h2::after {
+    background-color: #009688;
+}
+.features .challenge a{
+    color:  #009688;
+    border-color:  #009688; 
+    background: linear-gradient(to right,  #009688 50% , white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+.features .box:hover a {
+    background-position: left bottom;
+    color: white;
+}
+.features .passion .img-holder::before {
+    background-color: rgb( 3 169 244 / 60%)
+}
+.features .passion h2::after {
+    background-color:  #03a9f4;
+}
+/* End feature */
+
+
+ 

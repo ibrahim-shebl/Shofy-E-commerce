@@ -1,0 +1,58 @@
+.sidebar_dashbord > h3::before,
+  .sidebar_dashbord > h3::after {
+    content: "";
+    background-color: #000;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+  }
+  .sidebar_dashbord > h3::before {
+    width: 80px;
+    height: 2px;
+    bottom: -20px;
+  }
+  .sidebar_dashbord > h3::after {
+    bottom: -29px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+  }
+  .sidebar_dashbord ul li a:hover,
+  .sidebar_dashbord ul li a.active {
+    background-color: #f6f6f6;
+  }
+  .sidebar_dashbord ul li a.active i,
+  .sidebar_dashbord ul li a:hover i {
+    color: #000;
+  }
+  .sidebar_dashbord ul li a.active span,
+  .sidebar_dashbord ul li a:hover span {
+    color: #000;
+  }
+  @media (max-width: 767px) {
+    .sidebar_dashbord > h3::before,
+    .sidebar_dashbord > h3::after {
+      display: none;
+    }
+    .sidebar_dashbord ul li a span {
+      display: none;
+    }
+  }
+  .admin_contant h1::before,
+  .admin_contant h1::after {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+  }
+  .admin_contant h1::before {
+    background-color: white;
+    width: 120px;
+  }
+  .admin_contant h1::after {
+    background-color: black;
+    width: 40px;
+  }
+  

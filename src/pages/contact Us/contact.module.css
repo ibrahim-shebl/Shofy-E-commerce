@@ -1,0 +1,20 @@
+.image img {
+    height: 250px;
+    position: relative;
+    animation: up-and-down 5s linear infinite;
+}
+@media only screen and (min-width: 767px) and (max-width: 1270px) {
+    .imgUptated{
+        padding-right: 0px !important;
+    }
+}
+@keyframes up-and-down {
+    0% , 
+    100% {
+      top: 0;
+    }
+    50% {
+        top: -50px;
+    }
+}
+ 
