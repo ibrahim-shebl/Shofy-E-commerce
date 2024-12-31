@@ -26,7 +26,7 @@ const ContactUs = () => {
         formDataObj.append('Description', formData.Description);
 
         try {
-            const response = await axios.post("http://berryapp.runasp.net/api/ContactUs", formDataObj);
+            const response = await axios.post("https://berryapp.runasp.net/api/ContactUs", formDataObj);
 
             if (response.status === 200) {
                 toast.success("تم إرسال الرسالة بنجاح");

@@ -13,7 +13,7 @@ const Shop = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.get("http://berryapp.runasp.net/api/Products");
+        const response = await axios.get("https://berryapp.runasp.net/api/Products");
         setProducts(response.data);
         setFilteredProducts(response.data);  
         setLoading(false);

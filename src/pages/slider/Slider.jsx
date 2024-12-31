@@ -14,7 +14,7 @@ const SliderApp = () => {
       duration: 1200,
     });
 
-    fetch("http://berryapp.runasp.net/api/Banner")
+    fetch("https://berryapp.runasp.net/api/Banner")
       .then(response => response.json())
       .then(data => {
         setProducts(data);

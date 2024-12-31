@@ -9,7 +9,7 @@ const Reviews = () => {
     useEffect(() => {
         const fetchReviews = async () => {
             try {
-                const response = await axios.get('http://berryapp.runasp.net/api/Reviews');
+                const response = await axios.get('https://berryapp.runasp.net/api/Reviews');
                 const allReviews = response.data;
                 const lastFourReviews = allReviews.slice(-4);
                 setReviews(lastFourReviews);

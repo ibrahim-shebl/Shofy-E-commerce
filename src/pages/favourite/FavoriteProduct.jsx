@@ -37,7 +37,7 @@ const FavoriteProduct = ({ product }) => {
     }
 
     try {
-      const response = await fetch("http://berryapp.runasp.net/api/Carts", {
+      const response = await fetch("https://berryapp.runasp.net/api/Carts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

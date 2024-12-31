@@ -8,7 +8,7 @@ const CategoryFilters = ({ onCategorySelect }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.get("http://berryapp.runasp.net/api/Products");
+        const response = await axios.get("https://berryapp.runasp.net/api/Products");
         setProductData(response.data);  
         setLoading(false);
       } catch (error) {

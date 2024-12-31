@@ -16,7 +16,7 @@ const AddReview = () => {
         };
 
         try {
-            const response = await axios.post('http://berryapp.runasp.net/api/Reviews', body, {
+            const response = await axios.post('https://berryapp.runasp.net/api/Reviews', body, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

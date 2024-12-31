@@ -14,7 +14,7 @@ const Products = () => {
     const getProducts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://berryapp.runasp.net/api/Products");
+        const response = await axios.get("https://berryapp.runasp.net/api/Products");
         console.log("API Response:", response.data); // تحقق من البيانات
         setProducts(response.data);  
         setLoading(false);

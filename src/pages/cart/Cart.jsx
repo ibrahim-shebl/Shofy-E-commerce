@@ -42,7 +42,7 @@ const Cart = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const response = await axios.delete('http://berryapp.runasp.net/api/Carts/clear');
+          const response = await axios.delete('https://berryapp.runasp.net/api/Carts/clear');
           if (response.status === 204) {
             dispatch(resetCart());
             Swal.fire("Reset!", "Your cart has been reset.", "success");

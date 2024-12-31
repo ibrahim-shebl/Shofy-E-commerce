@@ -15,7 +15,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const response = await axios.get(`http://berryapp.runasp.net/api/Products/${id}`);
+        const response = await axios.get(`https://berryapp.runasp.net/api/Products/${id}`);
         setProductData(response.data);
         setLoading(false);
       } catch (error) {
