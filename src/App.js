@@ -31,21 +31,22 @@ function App() {
                   <Route path='/contact' element={<ContactUs />} />
                   <Route path='/shop' element={<Shop />} />
                   <Route path='/about' element={<About />} />
+                  <Route path='/favourite' element={<Favourite />} />
                   <Route path="*" element={<NotFound />} />
                   <Route element={<ProtectedRouteAdmin />}>
                      <Route path="/admin" element={<Admin />} />
                   </Route>
 
-                  <Route path="/" element={<ProtectedRouteUser />}>
+                   
                      <Route path='/cart' element={<Cart />} />
-                     <Route path='/favourite' element={<Favourite />} />
+                     
                      <Route path='' element={<CheckoutBtn />} />
                      <Route path="" element={<PersonalPage />}>
                         <Route path="/information" element={<Portfolio />} />
 
                         <Route path="/help" element={<Help />} />
                      </Route>
-                  </Route>
+                 
                </Routes>
             </Layout>
          </Router>

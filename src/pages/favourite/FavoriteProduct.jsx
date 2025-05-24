@@ -26,62 +26,25 @@ const FavoriteProduct = ({ product }) => {
       navigate(`/product/${product?.id}`);
     }, 300);
   };
-  const handleAddToCart = async () => {
-    const accessToken = localStorage.getItem("accessToken"); // جلب الـ accessToken من localStorage
+  const handleAddToCart = () => {
+  dispatch(
+    addToCart({
+      id: product.id,
+      productName: product.productName,
+      catImgPath: product.catImgPath,
+      category: product.category,
+      description: product.description,
+      price: product.price,
+      oldPrice: product.oldPrice,
+      discountPercentage: product.discountPercentage,
+      brand: product.brand,
+      rate: product.rate,
+      quantity: 1,
+    })
+  );
+  toast.success("Product added to cart successfully!");
+};
 
-    if (!accessToken) {
-      // إذا لم يكن التوكن موجودًا
-      toast.error("You need to log in to add products to the cart.");
-      navigate("/login");
-      return;
-    }
-
-    try {
-      const response = await fetch("https://berryapp.runasp.net/api/Carts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`, // إضافة التوكن إلى الـ headers
-        },
-        body: JSON.stringify({
-          cartItems: [
-            {
-              productId: product.id,
-              quantity: 1,
-            },
-          ],
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        toast.success("Product added to cart successfully!");
-        dispatch(
-          addToCart({
-            id: product.id,
-            productName: product.productName,
-            catImgPath: product.catImgPath,
-            category: product.category,
-            description: product.description,
-            price: product.price,
-            oldPrice: product.oldPrice,
-            discountPercentage: product.discountPercentage,
-            brand: product.brand,
-            rate: product.rate,
-            quantity: 1,
-          })
-        );
-
-        console.log(data);
-      } else {
-        toast.error("Failed to add product to cart.");
-        console.error("Error:", await response.text());
-      }
-    } catch (error) {
-      toast.error("An error occurred while adding the product to cart.");
-      console.error("Error:", error);
-    }
-  };
   return (
     <div className="flex py-6">
       <div className="min-w-0 flex-1 lg:flex lg:flex-col">

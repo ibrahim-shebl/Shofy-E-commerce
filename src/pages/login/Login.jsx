@@ -28,7 +28,12 @@ const Login = () => {
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('isLoggedIn', true);  
 
-        navigate('/');
+        // توجيه المستخدم بناءً على البريد الإلكتروني
+        if (email === 'admin@gmail.com') {
+          navigate('/admin'); // توجيه إلى صفحة المشرف
+        } else {
+          navigate('/'); // توجيه إلى الصفحة الرئيسية
+        }
         toast.success('SignIn Successfully');
       } else {
         console.log("error in signin:", data.message);

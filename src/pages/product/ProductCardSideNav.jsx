@@ -18,13 +18,6 @@ const ProductCardSideNav = ({ product }) => {
   }, [product, favoriteData]);
 
   const handleFavorite = () => {
-    const accessToken = localStorage.getItem("accessToken"); // التحقق من وجود التوكن
-    if (!accessToken) {
-      toast.error("You must be logged in to add to favorites");
-      navigate("/login");  
-      return;
-    }
-
     if (existingProduct) {
       dispatch(deleteFavorite(product?.id));
       toast.error("Removed from favorites successfully");

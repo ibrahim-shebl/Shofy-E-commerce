@@ -18,27 +18,22 @@ export default function Header() {
     const token = localStorage.getItem("accessToken");
     setIsLoggedIn(!!token);
 
-     
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user?.email === "admin@gmail.com") {
+      setIsAdmin(true);
+    } else {
+      setIsAdmin(false);
+    } // إذا كان التوكن موجودًا، فإن المستخدم مسجل الدخول
   }, [localStorage.getItem("accessToken")]);  
 
   const handleCartClick = () => {
-    const accessToken = localStorage.getItem("accessToken");
-    if (accessToken) {
       navigate("/cart");
-      setShowMenu(false)
-    } else {
-      navigate("/login");
-    }
+      setShowMenu(false)  
   };
 
   const handleFavouriteClick = () => {
-    const accessToken = localStorage.getItem("accessToken");
-    if (accessToken) {
       navigate("/favourite");
       setShowMenu(false);
-    } else {
-      navigate("/login");
-    }
   };
 
   const handleLogout = () => {
@@ -99,7 +94,13 @@ export default function Header() {
             </button>
           </Link>
         )}
-         
+        {isAdmin && (
+          <Link to="/admin">
+            <button className="text-sm px-4 py-2 rounded-lg hover:bg-gray-50">
+              Admin
+            </button>
+          </Link>
+        )}
       </div>
       <div className="flex items-center gap-1">
         <div className="flex items-center gap-1">
@@ -131,7 +132,7 @@ export default function Header() {
           <Link to="/login">
             <button
               title="My Account"
-              className="h-8 w-8 flex justify-center items-center rounded-full hover:bg-gray-50 "
+              className="h-8 w-8 flex justify-center items-center rounded-full hover:bg-gray-50"
             >
               <UserCircle2 size={14} />
             </button>
@@ -187,7 +188,13 @@ export default function Header() {
             </button>
           </Link>
         )}
-         
+        {isAdmin && (
+          <Link to="/admin">
+            <button className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-[#ff014f] duration-300">
+              Admin
+            </button>
+          </Link>
+        )}
               </ul>
               <span
                 onClick={() => setShowMenu(false)}
